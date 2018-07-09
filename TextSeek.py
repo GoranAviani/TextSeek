@@ -19,9 +19,17 @@ def main():
     matches = search_folders(folderPath, text)
 
     #print results
-    for match in matches:
-        print(match)
+    print_results(matches)
 
+    #for match in matches:
+    #    print(match)
+
+def print_results(matches):
+    for match in matches:
+        print("----------MATCH-----------")
+        print("file {}".format(match.file))
+        print("line: {} ".format(match.line))
+        print("match text: {}".format(match.text.strip()))
 
 
 def print_header():
@@ -62,9 +70,9 @@ def search_folders(folderPath, text):
     for file in filesInFolder:
         #adding path + name of folder as full path as listdir cant give more than just filename, no full path
         fullFilePath = os.path.join(folderPath, file)
-        print(folderPath)
-        print(file)
-        print(fullFilePath)
+        #print(folderPath)
+        #print(file)
+        #print(fullFilePath)
 
         #if its a folder skip it
         if os.path.isdir(file):
