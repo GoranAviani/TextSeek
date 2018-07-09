@@ -1,5 +1,7 @@
 import os
+import collections
 
+SearchResult = collections.namedtuple("SearchResult", "file, line, text")
 
 def main():
     print_header()
@@ -80,9 +82,13 @@ def search_file(fullFilePath, searchText):
     matches = []
     with open(fullFilePath, "r", encoding = "utf-8") as fin:
 
+        lineNumber = 0
         for line in fin:
+            lineNumber = 0
+            #if find is > 0 append the line to matches
             if line.lower().find(searchText) >= 0:
-                matches.append(line)
+                m = SearchResult(line = lineNumber, file = fullFilePath, text = line)
+                matches.append(m)
 
     return matches
 
