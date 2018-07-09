@@ -14,23 +14,23 @@ Search for text inside files across of massive number of files.
 ### Inputs & Outputs
 To find a phrase in a file you need to type in the location where you want to start you search and a phrase you search for.
 
-Location:
+##### Location:
 
 `"Which folder do you want to search: "`
 
 
-Examples:
+##### Examples:
 
 * `.` 					- current folder.
 * `../` 				- go a back folder.
 * `../Publications` 	- go a back folder and enter folder Publications.
 
-Phrase:
+##### Search Phrase:
 
 `"What do you want to search for, single phrases only: "`
 
 
-Example:
+##### Example:
 
 * `Nemo`
 * `World`
@@ -39,7 +39,7 @@ Example:
 
 
 
-Example of output for "Nemo" :
+##### Example of output for "Nemo" :
 
 
 `382: MATCH-----------------------------------------------------`
@@ -52,13 +52,14 @@ Example of output for "Nemo" :
 
 
 
-`383: MATCH-----------------------------------------------------
+`383: MATCH-----------------------------------------------------`
 
 `File: actual file location/20000 Leagues under the sea.txt`
 
 `Line: 12169`
 
 `Match text: CAPTAIN NEMO AND MYSELF.`
+
 
 
 
@@ -70,5 +71,4 @@ Total number of matches is 383`
 
 
 Due to high memory usage when scaning a large quantity of files (tested on over 1GB of book and python files) there was a need to 
-
-create TextSeekGen - a TextSeek app version that uses less memory.
+ create TextSeekGen - a TextSeek app version that uses less memory.
