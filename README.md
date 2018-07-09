@@ -18,21 +18,62 @@ Location:
 
 `"Which folder do you want to search: "`
 
+
 Examples:
 
-* . 				- current folder.
-* ../ 				- go a back folder.
-* ../Publications 	- go a back folder and enter folder Publications.
+* `.` 					- current folder.
+* `../` 				- go a back folder.
+* `../Publications` 	- go a back folder and enter folder Publications.
 
 Phrase:
 
 `"What do you want to search for, single phrases only: "`
 
+
 Example:
 
-* Nemo
-* World
-* The earth does not want new continents, but new men.
+* `Nemo`
+* `World`
+* `The earth does not want new continents, but new men.`
+
+
+Examples of output:
+
+`382: MATCH-----------------------------------------------------
+File: actual file location/20000 Leagues under the sea.txt
+Line: 12158 
+Match text: so many other vessels have been lost!  If it be so--if Captain Nemo`
+
+
+`383: MATCH-----------------------------------------------------
+File: actual file location/20000 Leagues under the sea.txt
+Line: 12169 
+Match text: CAPTAIN NEMO AND MYSELF.`
+
+
+
+`Search is done!
+Total number of matches is 383`
+
+
+
+
+
+`
+1: MATCH-----------------------------------------------------
+File: actual file location/20000 Leagues under the sea.txt
+Line: 4002 
+Match text: "The earth does not want new continents, but new men."`
+
+
+
+`
+Search is done!
+Total number of matches is 1`
+
+
+
+
 
 
 
