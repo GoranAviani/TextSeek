@@ -63,8 +63,11 @@ To find a phrase in a file you need to type in the location where you want to st
 
 
 
-`Search is done!
-Total number of matches is 383`
+`-----------------------------------------------------`
+
+`Search is done!`
+
+`Total number of matches is 383`
 
 
 ## Notes/ Additional Info
