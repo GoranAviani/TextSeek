@@ -37,7 +37,10 @@ Example:
 * `The earth does not want new continents, but new men.`
 
 
-Examples of output:
+
+
+Example of output for "Nemo" :
+
 
 `382: MATCH-----------------------------------------------------
 File: actual file location/20000 Leagues under the sea.txt
@@ -54,27 +57,6 @@ Match text: CAPTAIN NEMO AND MYSELF.`
 
 `Search is done!
 Total number of matches is 383`
-
-
-
-
-
-`
-1: MATCH-----------------------------------------------------
-File: actual file location/20000 Leagues under the sea.txt
-Line: 4002 
-Match text: "The earth does not want new continents, but new men."`
-
-
-
-`
-Search is done!
-Total number of matches is 1`
-
-
-
-
-
 
 
 ## Notes/ Additional Info
