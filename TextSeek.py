@@ -70,17 +70,22 @@ def search_folders(folderPath, text):
     for file in filesInFolder:
         #adding path + name of folder as full path as listdir cant give more than just filename, no full path
         fullFilePath = os.path.join(folderPath, file)
+
         #print(folderPath)
         #print(file)
         #print(fullFilePath)
 
-        #if its a folder skip it
-        if os.path.isdir(file):
-            continue
+        #if fullFilePath is actually a folder call function search_folders
+        # and search it using recursion
+        if os.path.isdir(fullFilePath):
+            if not "." in fullFilePath:
+                matches = search_folders(fullFilePath, text)
+                allMatches.extend(matches)
 
-        #if its a file search it
-        matches = search_file(fullFilePath, text)
-        allMatches.extend(matches)
+        else:
+            #if its a file search it
+            matches = search_file(fullFilePath, text)
+            allMatches.extend(matches)
 
     return allMatches
 
@@ -88,11 +93,12 @@ def search_folders(folderPath, text):
 
 def search_file(fullFilePath, searchText):
     matches = []
+    print(fullFilePath)
     with open(fullFilePath, "r", encoding = "utf-8") as fin:
 
         lineNumber = 0
         for line in fin:
-            lineNumber = 0
+            lineNumber += 1
             #if find is > 0 append the line to matches
             if line.lower().find(searchText) >= 0:
                 m = SearchResult(line = lineNumber, file = fullFilePath, text = line)

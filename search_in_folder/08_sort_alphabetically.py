@@ -1,4 +1,4 @@
-# Question 8
+# Question
 # Level 2
 # Question:
 # Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated
