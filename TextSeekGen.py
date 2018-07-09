@@ -64,8 +64,6 @@ def get_search_text_from_user():
 
 def search_folders(folderPath, text):
 
-    allMatches=[]
-
     #listdir gives only filenames in this folder, not full path name
     filesInFolder = os.listdir(folderPath)
 
@@ -79,20 +77,25 @@ def search_folders(folderPath, text):
         if os.path.isdir(fullFilePath):
             #Prevent from accessing hidden files
             if not "." in fullFilePath:
-                matches = search_folders(fullFilePath, text)
-                allMatches.extend(matches)
+                matchesGenerator = search_folders(fullFilePath, text)
+
+                # replaced with new version:
+                #for m in matchesGenerator:
+                #    yield m
+                yield from matchesGenerator
 
         else:
             #if its a file search it
-            matches = search_file(fullFilePath, text)
-            allMatches.extend(matches)
+            matchesGenerator = search_file(fullFilePath, text)
 
-    return allMatches
-
+            # replaced with new version:
+            # for m in matchesGenerator:
+            #    yield m
+            yield from matchesGenerator
 
 
 def search_file(fullFilePath, searchText):
-    matches = []
+
     #print(fullFilePath)
     with open(fullFilePath, "r", encoding = "utf-8") as fin:
 
@@ -102,9 +105,8 @@ def search_file(fullFilePath, searchText):
             #if find is > 0 append the line to matches
             if line.lower().find(searchText) >= 0:
                 m = SearchResult(line = lineNumber, file = fullFilePath, text = line)
-                matches.append(m)
+                yield m
 
-    return matches
 
 
 

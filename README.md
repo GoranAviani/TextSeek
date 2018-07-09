@@ -15,6 +15,7 @@ Search for text inside files across of massive number of files.
 To find a phrase in a file you need to type in the location where you want to start you search and a phrase you search for.
 
 Location:
+
 `"Which folder do you want to search: "`
 
 Examples:
@@ -24,6 +25,7 @@ Examples:
 * ../Publications 	- go a back folder and enter folder Publications.
 
 Phrase:
+
 `"What do you want to search for, single phrases only: "`
 
 Example:
