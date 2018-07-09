@@ -25,12 +25,15 @@ def main():
     #    print(match)
 
 def print_results(matches):
+    totalMatches = 0
     for match in matches:
-        print("----------MATCH-----------")
-        print("file {}".format(match.file))
-        print("line: {} ".format(match.line))
-        print("match text: {}".format(match.text.strip()))
-
+        totalMatches += 1
+        print(str(totalMatches)+": MATCH-----------------------------------------------------")
+        print("File: {}".format(match.file))
+        print("Line: {} ".format(match.line))
+        print("Match text: {}".format(match.text.strip()))
+    print("\n-------------------------------------------------------------------")
+    print("\nSearch is done!\nTotal number of matches is {}".format(totalMatches))
 
 def print_header():
     print("-----------------------------------------------------")
