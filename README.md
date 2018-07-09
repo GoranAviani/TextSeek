@@ -42,16 +42,23 @@ Example:
 Example of output for "Nemo" :
 
 
-`382: MATCH-----------------------------------------------------
-File: actual file location/20000 Leagues under the sea.txt
-Line: 12158 
-Match text: so many other vessels have been lost!  If it be so--if Captain Nemo`
+`382: MATCH-----------------------------------------------------`
+
+`File: actual file location/20000 Leagues under the sea.txt`
+
+`Line: 12158 `
+
+`Match text: so many other vessels have been lost!  If it be so--if Captain Nemo`
+
 
 
 `383: MATCH-----------------------------------------------------
-File: actual file location/20000 Leagues under the sea.txt
-Line: 12169 
-Match text: CAPTAIN NEMO AND MYSELF.`
+
+`File: actual file location/20000 Leagues under the sea.txt`
+
+`Line: 12169`
+
+`Match text: CAPTAIN NEMO AND MYSELF.`
 
 
 
