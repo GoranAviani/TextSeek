@@ -23,9 +23,9 @@ def main():
 
 
 def print_header():
-    print("---------------------------------------------------")
-    print("                  File searching app")
-    print("---------------------------------------------------")
+    print("-----------------------------------------------------")
+    print("                  TextSeek                           ")
+    print("-----------------------------------------------------")
 
 #Folder where it will be searched
 def get_folder_from_user():
