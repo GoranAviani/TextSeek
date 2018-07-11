@@ -62,6 +62,23 @@ def get_search_text_from_user():
 
 
 
+def check_if_textual_file(file):
+    #print(" skraceno {}".format(file[:1]))
+
+    #If the file is hidden dont search
+    if file[:1] == ".":
+
+        return file, "NO"
+
+    else:
+        return file, "OK"
+    #if not ".git" in file:
+    #    return file, "OK"
+
+
+
+
+
 def search_folders(folderPath, text):
 
     allMatches=[]
@@ -71,21 +88,30 @@ def search_folders(folderPath, text):
 
 
     for file in filesInFolder:
-        #adding path + name of folder as full path as listdir cant give more than just filename, no full path
-        fullFilePath = os.path.join(folderPath, file)
 
-        #if fullFilePath is actually a folder call function search_folders
-        # and search it using recursion
-        if os.path.isdir(fullFilePath):
-            #Prevent from accessing hidden files
-            if not "." in fullFilePath:
-                matches = search_folders(fullFilePath, text)
-                allMatches.extend(matches)
+        file, result = check_if_textual_file(file)
 
+        if result =="NO":
+            continue
         else:
-            #if its a file search it
-            matches = search_file(fullFilePath, text)
-            allMatches.extend(matches)
+            # adding path + name of folder as full path as listdir cant give more than just filename, no full path
+            fullFilePath = os.path.join(folderPath, file)
+            #print("path {}" .format(folderPath))
+            #print("fajl {}" .format(file))
+            #print("sve {}" .format(fullFilePath))
+
+
+            #if fullFilePath is actually a folder call function search_folders
+            # and search it using recursion
+            if os.path.isdir(fullFilePath):
+                #Prevent from accessing hidden files
+                    matches = search_folders(fullFilePath, text)
+                    allMatches.extend(matches)
+
+            else:
+                #if its a file search it
+                matches = search_file(fullFilePath, text)
+                allMatches.extend(matches)
 
     return allMatches
 
