@@ -63,20 +63,24 @@ def get_search_text_from_user():
 
 
 def check_if_textual_file(file):
-    #print(" skraceno {}".format(file[:1]))
+    print(file)
+    print(" file {}".format(file[-3:]))
+    acceptedFilesFormats = ["txt", ".py", ".md"]
+
+    #If it is a folder return OK
+    if os.path.isdir(file):
+        return file, "OK"
 
     #If the file is hidden dont search
     if file[:1] == ".":
-
         return file, "NO"
+    #If it is one of accepted formats it is ok
+    elif file[-3:] in acceptedFilesFormats:
+        print("ok")
+        return file, "OK"
 
     else:
-        return file, "OK"
-    #if not ".git" in file:
-    #    return file, "OK"
-
-
-
+        return file, "NO"
 
 
 def search_folders(folderPath, text):
