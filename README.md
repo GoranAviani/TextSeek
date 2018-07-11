@@ -75,3 +75,13 @@ To find a phrase in a file you need to type in the location where you want to st
 
 Due to high memory usage when scaning a large quantity of files (tested on over 1GB of book and python files) there was a need to 
  create TextSeekGen - a TextSeek app version that uses less memory.
+ 
+ <br>
+ 
+##### Supporting formats:
+ 
+* .txt - Plain text file.
+* .py - Python Script.
+* .js - JavaScript source code.
+* .md - Markdown Documentation File.
+* .css - Cascading Style Sheet.
