@@ -63,7 +63,10 @@ def get_search_text_from_user():
 def check_if_textual_file(file):
     #print(file)
     #print(" file {}".format(file[-3:]))
-    acceptedFilesFormats = ["txt", ".py", ".md", ".js", "css"]
+    acceptedFilesFormatslLen4 = []
+    acceptedFilesFormatslLen3 = [".txt", ".css"]
+    acceptedFilesFormatslLen2 = [".py", ".md", ".js"]
+
 
     #If it is a folder return OK
     if os.path.isdir(file):
@@ -72,8 +75,12 @@ def check_if_textual_file(file):
     #If the file is hidden dont search
     if file[:1] == ".":
         return file, "NO"
-    #If it is one of accepted formats it is ok
-    elif file[-3:] in acceptedFilesFormats:
+
+    #If it is in one of accepted formats it is ok:
+    elif file[-4:] in acceptedFilesFormatslLen3:
+        #print("ok")
+        return file, "OK"
+    elif file[-3:] in acceptedFilesFormatslLen2:
         #print("ok")
         return file, "OK"
 
