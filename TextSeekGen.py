@@ -63,7 +63,7 @@ def get_search_text_from_user():
 def check_if_textual_file(file):
     #print(file)
     #print(" file {}".format(file[-3:]))
-    acceptedFilesFormatslLen4 = []
+    acceptedFilesFormatslLen4 = [".json"]
     acceptedFilesFormatslLen3 = [".txt", ".css"]
     acceptedFilesFormatslLen2 = [".py", ".md", ".js"]
 
@@ -77,6 +77,9 @@ def check_if_textual_file(file):
         return file, "NO"
 
     #If it is in one of accepted formats it is ok:
+    elif file[-5:] in acceptedFilesFormatslLen4:
+        #print("ok")
+        return file, "OK"
     elif file[-4:] in acceptedFilesFormatslLen3:
         #print("ok")
         return file, "OK"
