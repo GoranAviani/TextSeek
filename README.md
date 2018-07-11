@@ -85,3 +85,4 @@ Due to high memory usage when scaning a large quantity of files (tested on over 
 * .js - JavaScript source code.
 * .md - Markdown Documentation File.
 * .css - Cascading Style Sheet.
+* .json - JavaScript Object Notation File.
