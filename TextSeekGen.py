@@ -60,7 +60,25 @@ def get_search_text_from_user():
     text = input("What do you want to search for, single phrases only: ")
     return text.lower()
 
+def check_if_textual_file(file):
+    #print(file)
+    #print(" file {}".format(file[-3:]))
+    acceptedFilesFormats = ["txt", ".py", ".md", ".js", "css"]
 
+    #If it is a folder return OK
+    if os.path.isdir(file):
+        return file, "OK"
+
+    #If the file is hidden dont search
+    if file[:1] == ".":
+        return file, "NO"
+    #If it is one of accepted formats it is ok
+    elif file[-3:] in acceptedFilesFormats:
+        #print("ok")
+        return file, "OK"
+
+    else:
+        return file, "NO"
 
 def search_folders(folderPath, text):
 
@@ -69,29 +87,35 @@ def search_folders(folderPath, text):
 
 
     for file in filesInFolder:
-        #adding path + name of folder as full path as listdir cant give more than just filename, no full path
-        fullFilePath = os.path.join(folderPath, file)
 
-        #if fullFilePath is actually a folder call function search_folders
-        # and search it using recursion
-        if os.path.isdir(fullFilePath):
-            #Prevent from accessing hidden files
-            if not "." in fullFilePath:
-                matchesGenerator = search_folders(fullFilePath, text)
+        file, result = check_if_textual_file(file)
+
+        if result == "NO":
+            continue
+        else:
+            #adding path + name of folder as full path as listdir cant give more than just filename, no full path
+            fullFilePath = os.path.join(folderPath, file)
+
+            #if fullFilePath is actually a folder call function search_folders
+            # and search it using recursion
+            if os.path.isdir(fullFilePath):
+                #Prevent from accessing hidden files
+                if not "." in fullFilePath:
+                    matchesGenerator = search_folders(fullFilePath, text)
+
+                    # replaced with new version:
+                    #for m in matchesGenerator:
+                    #    yield m
+                    yield from matchesGenerator
+
+            else:
+                #if its a file search it
+                matchesGenerator = search_file(fullFilePath, text)
 
                 # replaced with new version:
-                #for m in matchesGenerator:
+                # for m in matchesGenerator:
                 #    yield m
                 yield from matchesGenerator
-
-        else:
-            #if its a file search it
-            matchesGenerator = search_file(fullFilePath, text)
-
-            # replaced with new version:
-            # for m in matchesGenerator:
-            #    yield m
-            yield from matchesGenerator
 
 
 def search_file(fullFilePath, searchText):
