@@ -65,7 +65,7 @@ def get_search_text_from_user():
 def check_if_textual_file(file):
     print(file)
     print(" file {}".format(file[-3:]))
-    acceptedFilesFormats = ["txt", ".py", ".md"]
+    acceptedFilesFormats = ["txt", ".py", ".md", ".js", "css"]
 
     #If it is a folder return OK
     if os.path.isdir(file):
