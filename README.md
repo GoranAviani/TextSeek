@@ -88,3 +88,4 @@ Due to high memory usage when scanning a large quantity of files (tested on over
 * .md - Markdown Documentation File.
 * .css - Cascading Style Sheet.
 * .json - JavaScript Object Notation File.
+* .php - Hypertext Preprocessor
