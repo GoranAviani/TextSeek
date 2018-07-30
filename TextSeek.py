@@ -66,7 +66,7 @@ def check_if_textual_file(file):
     #print(file)
     #print(" file {}".format(file[-3:]))
     acceptedFilesFormatslLen4 = [".json"]
-    acceptedFilesFormatslLen3 = [".txt", ".css"]
+    acceptedFilesFormatslLen3 = [".txt", ".css",".php"]
     acceptedFilesFormatslLen2 = [".py", ".md", ".js"]
 
 

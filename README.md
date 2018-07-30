@@ -73,8 +73,10 @@ To find a phrase in a file you need to type in the location where you want to st
 ## Notes/ Additional Info
 
 
-Due to high memory usage when scaning a large quantity of files (tested on over 1GB of book and python files) there was a need to 
+Due to high memory usage when scanning a large quantity of files (tested on over 1GB of book and python files) there was a need to 
  create TextSeekGen - a TextSeek app version that uses less memory.
+ 
+* It ignores hidden file patterns like .gitignore and .idea.
  
  <br>
  
